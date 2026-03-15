@@ -10,16 +10,16 @@ The architecture follows **DevOps best practices** by separating public and priv
 
 The infrastructure is deployed inside **Amazon Virtual Private Clound** with the following structure:
 
-VPC (10.0.0.0/16)
-Public Subnet (10.0.1.0/24)
-├── Internet Gateway
-├── Load Balancer
-├── Bastion Host
-└── NAT Gateway
+VPC (10.0.0.0/16) <br>
+Public Subnet (10.0.1.0/24) <br>
+├── Internet Gateway<br>
+├── Load Balancer<br>
+├── Bastion Host<br>
+└── NAT Gateway<br>
 
-Private Subnet (10.0.2.0/24)
-└── Auto Scaling Group
-└── EC2 Web Servers
+Private Subnet (10.0.2.0/24)<br>
+└── Auto Scaling Group<br>
+└── EC2 Web Servers<br>
 
 <img src="./assets/aws-diagram.png" alt="skdfkafjlksdfjksdfj">
 
