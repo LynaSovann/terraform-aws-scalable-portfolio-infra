@@ -10,17 +10,6 @@ The architecture follows **DevOps best practices** by separating public and priv
 
 The infrastructure is deployed inside **Amazon Virtual Private Clound** with the following structure:
 
-VPC (10.0.0.0/16) <br>
-Public Subnet (10.0.1.0/24) <br>
-├── Internet Gateway<br>
-├── Load Balancer<br>
-├── Bastion Host<br>
-└── NAT Gateway<br>
-
-Private Subnet (10.0.2.0/24)<br>
-└── Auto Scaling Group<br>
-└── EC2 Web Servers<br>
-
 <img src="./assets/aws-diagram.png" alt="skdfkafjlksdfjksdfj">
 
 ### Key Services
@@ -32,38 +21,17 @@ Private Subnet (10.0.2.0/24)<br>
 
 ---
 
-## Networking Design
-
-Two subnets are created within a single Availability Zone:
-
-1. **Subnet**: Public Subnet
-   - **Purpose** : Internet-facing resources
-2. **Subnet** : Private Subnet
-   - **Subnet** : Application servers
-
-### Route Tables
-
-- **Public Route Table**
-  0.0.0.0/0 → Internet Gateway
-- **Private Route Table**
-  0.0.0.0/0 → NAT Gateway
-  This ensures:
-- Public services can receive internet traffic.
-- Private servers can access the internet for updates without being exposed.
-
----
-
 ## Security Design
 
 Security is implemented using multiple layers:
 
-- **Bastion Host**
+- **Session Manager**
   - Allow controlled SSH acccess to private instances.
 - **Load Balancer**
   - Handles all public HTTPS traffic.
 - **Private Web Service**
   - No public IP addresses.
-  - Accessible only through the load balancer or bastion host.
+  - Accessible only through the load balancer or session manager.
 
 ---
 
@@ -72,7 +40,7 @@ Security is implemented using multiple layers:
 - Infrastructure fully managed with **Terraform**
 - Isolated networking using VPC
 - Secure private web servers
-- Bastion host for controlled access
+- Session Manager for controlled access
 - Auto Scaling for high availability
 - Clean and simple architecture suitable for learning DevOps practices
 
