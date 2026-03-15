@@ -25,13 +25,13 @@ The infrastructure is deployed inside **Amazon Virtual Private Clound** with the
 
 Security is implemented using multiple layers:
 
-- **Session Manager**
+- **Bastion Host**
   - Allow controlled SSH acccess to private instances.
 - **Load Balancer**
   - Handles all public HTTPS traffic.
 - **Private Web Service**
   - No public IP addresses.
-  - Accessible only through the load balancer or session manager.
+  - Accessible only through the load balancer (port 80) or bastion host (port 22).
 
 ---
 
@@ -40,7 +40,7 @@ Security is implemented using multiple layers:
 - Infrastructure fully managed with **Terraform**
 - Isolated networking using VPC
 - Secure private web servers
-- Session Manager for controlled access
+- Bastion Host for controlled access
 - Auto Scaling for high availability
 - Clean and simple architecture suitable for learning DevOps practices
 
