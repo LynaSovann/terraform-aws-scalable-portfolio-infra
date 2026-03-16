@@ -71,3 +71,5 @@ terraform apply
 ## Purpose
 
 This project demonstrates how to design and deploy a **secure**, **scalable AWS network architecture** using Terraform while following **common DevOps infrastructure patterns**.
+
+<div align="center"> <img src="./assets/result.png"  alt="result"> </div>
