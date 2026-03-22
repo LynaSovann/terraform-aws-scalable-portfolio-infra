@@ -27,3 +27,7 @@ Thumbs.db
 .vscode/
 .idea/
 .qodo/
+
+
+terraform/*.tfstate
+terraform/*.tfstate.*
