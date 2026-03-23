@@ -13,7 +13,7 @@ resource "aws_launch_template" "web" {
     systemctl enable httpd
     rm -rf /var/www/html/*
     cd /var/www/html
-    git clone -b main https://github.com/LynaSovann/lyna-sovann-portfolio.git .
+    git clone -b from-main https://github.com/LynaSovann/lyna-sovann-portfolio.git .
     systemctl restart httpd
   EOF
   )

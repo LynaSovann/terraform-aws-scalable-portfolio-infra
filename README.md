@@ -2,7 +2,7 @@
 
 This project provisions a **secure and scalable AWS infrastructure** for hosting a personal portfolio website using **Infrastructure as Code (Iac)** with Terraform.
 
-The architecture follows **DevOps best practices** by separating public and private resources, restricting direct internet access to backend servers, and enabling automatic scaling.
+The architecture follows **DevOps best practices** by separating public and private resources, restricting direct internet access to backend servers, and enabling automatic scaling. A **target-tracking scaling policy** automatically adjusts the number of web servers based on average CPU untilization, ensuring consistent performance while optimizing resource usage.
 
 ---
 
