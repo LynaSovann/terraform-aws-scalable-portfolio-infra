@@ -51,7 +51,7 @@ Security is implemented using multiple layers:
 Initialze Terraform
 
 ```bash
-terraform init
+terraform init -backend-config="bucket=portfolio-lyna"
 ```
 
 Review the execution plan
